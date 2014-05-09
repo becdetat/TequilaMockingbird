@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TequilaMockingbird", "src\TequilaMockingbird\TequilaMockingbird.csproj", "{45B46A4B-2130-46D6-9384-019E20393D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TequilaMockingbird.Tests", "src\TequilaMockingbird.Tests\TequilaMockingbird.Tests.csproj", "{8CDE017D-504E-4EB5-A585-5700E080FC19}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45B46A4B-2130-46D6-9384-019E20393D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B46A4B-2130-46D6-9384-019E20393D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B46A4B-2130-46D6-9384-019E20393D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B46A4B-2130-46D6-9384-019E20393D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDE017D-504E-4EB5-A585-5700E080FC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDE017D-504E-4EB5-A585-5700E080FC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDE017D-504E-4EB5-A585-5700E080FC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDE017D-504E-4EB5-A585-5700E080FC19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
