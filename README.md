@@ -6,8 +6,21 @@ Highly configurable test data generator.
 Note that this isn't necessarily for use in unit tests. Although it definitely could be used in unit tests, generally I would avoid this except for doing some kind of fuzz testing. This is really intended for generating test data for consumption within an application. For example, generate a thousand prepoulated contacts for persisting to the database, to provide some load to the system during development.
 
 
-## Example syntax and usage (example driven development)
+## TODOs
 
+- ~~Named list of things~~
+- built in lists
+- gender hints on first names
+- replace named list
+- append to named list
+- generate a date in a range
+- remember and retrieve the last thing that was generated
+- generate a date within timespan of a fixed date
+- Named configurations
+- Get X number of things
+
+
+## Example syntax and usage (example driven development)
 
 ### Named list of things
 
@@ -128,17 +141,4 @@ Last call to each type of thing gets written to a cache:
 
 	IEnumerable<Person> people = generator.Get(50).Of(x => new Person(x.GetFirstName(), x.GetLastName(), x.GetDate("dob")));
 
-
-## TODOs
-
-- ~~Named list of things~~
-- built in lists
-- gender hints on first names
-- replace named list
-- append to named list
-- generate a date in a range
-- remember and retrieve the last thing that was generated
-- generate a date within timespan of a fixed date
-- Named configurations
-- Get X number of things
 
