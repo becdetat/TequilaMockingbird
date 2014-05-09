@@ -1,33 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shouldly;
+using Xunit;
 
 namespace TequilaMockingbird.Tests.ReadmeTests
 {
     public class NamedListOfThings
     {
-        /*
-         * Configure a generator with a named list:
+        [Fact]
+        public void ConfigureGeneratorWithNamedList()
+        {
+            var myList = new[] {"one", "two", "three"};
+            var generator = new TequilaMockingbird.TestDataGeneratorBuilder()
+                .WithList("my list", myList)
+                .Build();
 
-	        var generator = new TequilaMockingbird.TestDataGeneratorBuilder()
-		        .WithList("my list", new[] { "one", "two", "three"})
-		        .Build();
+            var foos = new Collection<Foo>();
+            foos.Add(new Foo(generator.GetFromList<string>("my list")));
+            foos.Add(new Foo(generator.GetFromList<string>("my list")));
+            foos.Add(new Foo(generator.GetFromList<string>("my list")));
+            foos.Add(new Foo(generator.GetFromList<string>("my list")));
 
-	        var foos = new Collection<Foo>();
-	        foos.Add(new Foo(generator.GetFromList<string>("my list")));
-	        foos.Add(new Foo(generator.GetFromList<string>("my list")));
-	        foos.Add(new Foo(generator.GetFromList<string>("my list")));
-	        foos.Add(new Foo(generator.GetFromList<string>("my list")));
+            foos.ShouldAllBe(x => myList.Contains(x.Name));
+        }
 
-        `WithList` takes an object as the key and an ienumerable of object as the list.
+        [Fact]
+        public void EnumAsKeyAndIntsAsValues()
+        {
+            var myList = new[] {4, 5, 6};
+            var myOtherList = new[] {7, 8, 9};
 
-	        var generator = new TequilaMockingbird.TestDataGeneratorBuilder()
-		        .WithList(SomeEnum.MyList, new[] { 4, 5, 6 })
-		        .Build();
+            var generator = new TequilaMockingbird.TestDataGeneratorBuilder()
+                .WithList(SomeEnum.MyList, myList.OfType<object>())
+                .WithList(SomeEnum.MyOtherList, myOtherList.OfType<object>())
+                .Build();
 
-        `GetFromList` uses the generic type to cast a random member of the list to the appropriate type.
-        */
+            for (var i = 0; i < 10; i ++)
+            {
+                myList.ShouldContain(generator.GetFromList<int>(SomeEnum.MyList));
+                myOtherList.ShouldContain(generator.GetFromList<int>(SomeEnum.MyOtherList));
+            }
+        }
+
+        private class Foo
+        {
+            public Foo(string name)
+            {
+                Name = name;
+            }
+
+            public string Name { get; private set; }
+        }
+
+        private enum SomeEnum
+        {
+            MyList,
+            MyOtherList,
+        }
     }
 }

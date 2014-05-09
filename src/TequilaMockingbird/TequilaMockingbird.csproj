@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ObjectExtensions`ToDictionary.cs" />
+    <Compile Include="Extensions\StringExtensions`FormatWith.cs" />
     <Compile Include="TestDataGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataGeneratorBuilder.cs" />
+    <Compile Include="UnknownNamedListException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

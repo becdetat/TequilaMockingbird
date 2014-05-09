@@ -48,6 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NamedLists\CreatingEmptyNamedList.cs" />
+    <Compile Include="NamedLists\CreatingTrivalNamedList.cs" />
     <Compile Include="ReadmeTests\NamedListOfThings.cs" />
     <Compile Include="WeShouldHaveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

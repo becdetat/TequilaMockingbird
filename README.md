@@ -31,6 +31,20 @@ Configure a generator with a named list:
 
 `GetFromList` uses the generic type to cast a random member of the list to the appropriate type.
 
+Note that `.WithList(key, new[] { 4, 5, 6 })` but this doesn't:
+
+	int[] values = new[] { 4, 5, 6 };
+	builder.WithList(key, values);
+
+The above causes a compiler error:
+
+	cannot convert from 'int[]' to 'System.Collections.Generic.IEnumerable<object>'
+
+Cast the values to objects first:
+
+	int[] values = new[] { 4, 5, 6 };
+	builder.WithList(key, values.OfType<object>());
+
 
 ### built in lists
 
@@ -117,12 +131,14 @@ Last call to each type of thing gets written to a cache:
 
 ## TODOs
 
-- Generate a random word from a list of words
-- Generate a first name from a substantial set of first names
-- Generate a last name from a substantial set of last names
-- Generate a date of birth from a range
-- get X number of things (pass in a lambda)
-- Gender hints on first names
-
-
+- ~~Named list of things~~
+- built in lists
+- gender hints on first names
+- replace named list
+- append to named list
+- generate a date in a range
+- remember and retrieve the last thing that was generated
+- generate a date within timespan of a fixed date
+- Named configurations
+- Get X number of things
 

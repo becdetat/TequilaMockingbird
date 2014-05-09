@@ -8,9 +8,18 @@ namespace TequilaMockingbird
 {
     public class TestDataGeneratorBuilder
     {
+        IDictionary<object, IEnumerable<object>> _lists = new Dictionary<object, IEnumerable<object>>();
+
         public TestDataGenerator Build()
         {
-            return new TestDataGenerator();
+            return new TestDataGenerator(_lists);
+        }
+
+        public TestDataGeneratorBuilder WithList(object key, IEnumerable<object> values)
+        {
+            _lists.Add(key, values);
+
+            return this;
         }
     }
 }
