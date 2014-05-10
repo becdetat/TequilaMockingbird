@@ -4,6 +4,7 @@
 </Query>
 
 var sets = new[] { "FirstName" };
+
 var root = @"c:\source\bendetat\TequilaMockingbird";
 
 var template = @"
