@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TequilaMockingbird.Extensions
 {
-    public static partial class ObjectExtensions
+    internal static partial class ObjectExtensions
     {
         public static IDictionary<string, object> ToDictionary(this object o)
         {

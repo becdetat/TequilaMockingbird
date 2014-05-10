@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TequilaMockingbird.Extensions
 {
-    public static partial class StringExtensions
+    internal static partial class StringExtensions
     {
 public static string FormatWith(this string format, params object[] args)
     {
