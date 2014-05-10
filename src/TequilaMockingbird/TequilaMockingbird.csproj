@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSets\FirstNames.cs" />
+    <Compile Include="DataSets\FirstName.cs" />
     <Compile Include="DataSets\IDataSet.cs" />
     <Compile Include="Extensions\ObjectExtensions`ToDictionary.cs" />
     <Compile Include="Extensions\StringExtensions`FormatWith.cs" />

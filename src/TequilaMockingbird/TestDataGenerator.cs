@@ -28,5 +28,10 @@ namespace TequilaMockingbird
 
             return availableItems[_random.Next(0, availableItems.Length - 1)];
         }
+
+        public string GetFirstName()
+        {
+            return GetFromList<string>("FirstName");
+        }
     }
 }

@@ -30,6 +30,11 @@ namespace TequilaMockingbird.Tests
             _generator.ShouldNotBe(null);
         }
 
+        public void ThenThereShouldBePreSeededFirstNames()
+        {
+            _generator.GetFirstName().ShouldNotBeEmpty();
+        }
+
         [Fact]
         public void Execute()
         {

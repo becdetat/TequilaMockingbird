@@ -10,6 +10,11 @@ namespace TequilaMockingbird
     {
         IDictionary<object, IEnumerable<object>> _lists = new Dictionary<object, IEnumerable<object>>();
 
+        public TestDataGeneratorBuilder()
+        {
+            WithList("FirstName", new DataSets.FirstName().GetData());
+        }
+
         public TestDataGenerator Build()
         {
             return new TestDataGenerator(_lists);
