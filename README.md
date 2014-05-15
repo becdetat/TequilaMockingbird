@@ -8,16 +8,16 @@ Note that this isn't necessarily for use in unit tests. Although it definitely c
 
 ## TODOs
 
-- ~~Named list of things~~
-- built in lists
-- gender hints on first names
-- replace named list
-- append to named list
-- generate a date in a range
-- remember and retrieve the last thing that was generated
-- generate a date within timespan of a fixed date
-- Named configurations
-- Get X number of things
+- [x] Named list of things
+- [ ] built in lists
+- [ ] gender hints on first names
+- [ ] replace named list
+- [ ] append to named list
+- [ ] generate a date in a range
+- [ ] remember and retrieve the last thing that was generated
+- [ ] generate a date within timespan of a fixed date
+- [ ] Named configurations
+- [ ] Get X number of things
 
 
 ## Example syntax and usage (example driven development)
