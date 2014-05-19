@@ -16,7 +16,7 @@ namespace TequilaMockingbird.Tests.ReadmeTests
         [Fact]
         public void GetFirstNameReturnsSomeData()
         {
-            _generator.GetFirstName().ShouldBeEmpty();
+            _generator.GetFirstName().ShouldNotBeEmpty();
         }
     }
 }
